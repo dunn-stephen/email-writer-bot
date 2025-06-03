@@ -1,0 +1,228 @@
+Email Examples:
+
+---------
+Hey Vova,
+
+The SMS opt-in implementation requires only two data elements:
+- Event name: "sms_signup"
+- User data: "phone_number" (format: "+16508475012")
+
+Example payload:
+{
+   "event": "sms_signup",
+   "phone_number": "+16508475012"
+}
+
+When this event is sent to Blueshift, the user will immediately receive an opt-in message.
+
+Thank you,
+---------
+Hey Anna and Vova,
+
+Our Data Science team has deployed the margin derived event. Here's an example profile.
+
+Event: event_metrics.margin_diff.add_to_cart
+
+Please review and let me know if there are any questions. 
+
+Thank you,
+---------
+Hey Mariel,
+
+Our engineering team investigated the link redirect issues. The 403 errors occur after the request hits the GTI domain. When we test the links directly they work, but show errors in redirect tracing tools. This indicates your load balancer or proxy server is likely filtering certain requests based on IP addresses or user agents, which explains why some users experience errors while others don't.
+
+Please have your IT team check your load balancer configurations, security rules, and filtering settings that might be affecting email clients differently.
+
+Thank you,
+---------
+Hey Bonnie,
+
+Filters generally inherit selection from the most recent session for your user.
+
+What were the report parameters? A particular campaign? Do you have a link?
+
+Thank you,
+---------
+Hey Anna,
+
+When capturing user data, I recommend following these best practices:
+
+1. Create separate pages for email and phone number collection:
+First page: Email capture using the "Blueshift Email Signup" integration
+Second page: Phone number capture using the "Blueshift SMS Signup" integration
+This approach clearly delineates user actions and sends Blueshift separate events for email and SMS signups. Plus, event names are fully customizable.
+
+2. Add mobile breakpoints to all pages to ensure proper display across devices.
+
+Let me know if you have any questions
+
+Thank you,
+---------
+Hey Vova,
+
+To change the frequency update "Task execute every" to hourly, documentation here.
+
+I suggest configuring two delivered import jobs. 
+
+The first, as a one-time import, this job should contain data from 2/11 and before that when the job was paused and only select "Save product for recommendations" in the job settings, see screenshot below.
+
+The second, should contain net new delivered event data that Blueshift has yet to see. This can be configured as an hourly import.
+---------
+Hey Stephanie,
+
+Blueshift and Meta itself are encrypted using SSL/TLS. In addition, the fields syndicated are hashed using SHA256.
+
+Thank you,
+---------
+Hey Juan,
+
+Thank you for the quick reply.
+
+I am working with carid.com, here's an example webpage: https://www.carid.com/2023-toyota-rav4-taillights/replacement-factory-replacement-tail-lights-fiber-optic-led-6148879460.html
+
+On that page in the dataLayer on the first object there is a key/value pair; productCategory: "tail lights".
+
+So if let's say I want to show the box if "tail lights" is true in the productCategory in the dataLayer would I do a custom javascript function condition like the following?
+
+function digohCustomBoxCondition() {
+    if (Array.isArray(window.dataLayer) && window.dataLayer.length > 0) {
+        return window.dataLayer[0].productCategory === "tail lights";
+    }
+    return false;
+}
+
+Thank you,
+---------
+Hey Stephanie,
+
+Found a couple links that might be useful to share with the team.
+
+Accessing AS via API: https://learn.microsoft.com/en-us/graph/use-the-api
+
+Export AD Files: https://learn.microsoft.com/en-us/previous-versions/windows/desktop/dsde/exporting-active-directory-objects
+
+Thank you,
+---------
+Hey Chrissy,
+
+We’ve identified a bug that allowed an empty messaging filter condition to be saved. This blank condition was present in the segment when the campaign launched, which caused the user count to drop to zero.
+
+Checking the email box in the segment builder effectively removed the blank condition. We're working on a bug fix that allowed this blank condition to be saved.
+
+In the meantime, I recommend refreshing the segment counts once to ensure any lingering blank conditions are removed.
+
+Let me know if you have any questions!
+
+Thank you,
+---------
+Hi Team,
+
+Have you been able to add the pending DNS entries highlighted in yellow here?
+
+Please note that we have updated two CNAME records as we recently updated our SSL provisioning process.
+
+Please let me know once these records have been added.
+
+Thank you,
+---------
+Hey Bonnie,
+
+The discrepancy you're seeing in the Unique Open Rate is related to how the metric is calculated daily as a ratio of opens to sends for the selected date range.
+
+On 10/30, there was a significant spike in sends, ~45k. When you select the 10/30 to 11/30 range, the open rate is calculated using all sends and opens within that period. However, when the start date shifts to 10/31, there are fewer sends but a relatively high number of opens and clicks during the remaining period. This imbalance results in an inflated open rate for that timeframe.
+
+I've included a screenshot below to help illustrate this. Please let me know if you need further clarification.
+
+Screenshot 2024-12-04 at 3.57.25 PM.png
+
+Thank you,
+---------
+Hey Mike,
+
+Our DE team has configured a use import adapter in staging.ent.com with a dedicated warehouse and task for our internal checks. 
+
+Here's a draft user import job for reference.
+
+They have asked that once the schema for the events table/view is configured we can then create an event import adapter. 
+
+Thank you,
+
+---------
+Hi Larysa,
+
+When Blueshift attempted to send emails to those addresses via Mailgun, they were flagged on Mailgun's suppression list due to previous unsubscribes. As a result, Mailgun did not deliver the emails, adhering to its safety mechanism.
+
+While it’s possible to override this by enabling the “Skip Suppression List” option in the email adapter, we do not recommend doing so as there is a high risk of negatively affecting your domain/IP reputation.
+
+Thank you,
+---------
+Hey Vova,
+
+A Dedicated IP has been provisioned with Autowarming enabled for i.carid.com. The domain is ready for use.
+143.55.230.49 - Dedicated
+198.61.254.23  - Shared
+Thank you,
+---------
+Hey Carrie,
+
+I think the next best step would be for me to reach out to our Data Science team to gather more details about the "Top View Items in the Last 28 Days" score.
+
+Before I do, could you share more about why this product is a concern? Additionally, do you have a list of top-selling or top-viewed products that our Data Science team could use for comparison?
+
+Are you aware of ongoing issues with bots interacting on the Five Below site? If the Five Below site sends a 'view' event to Blueshift, which populates the top viewed item's score, Blueshift doesn't have a way to distinguish a bot vs human-generated event. 
+
+Thank you,
+---------
+Hi Team,
+
+Thanks for joining us for today's Kickoff. On behalf of our team, we welcome you to Blueshift once more!
+
+Here are a few takeaways from today's call. 
+ 
+Call Recording
+Here is the recording from today's call.
+Email Domain Selection
+Please provide the list of subdomains. Once provided the DNS and configuration guidance will be shared.
+Data Overview
+Scheduled for Thursday, 1/16, at 1:30pm PST. The meeting will cover integration options and points around user data, catalog, events, and historical data (as needed). 
+
+Schedule Weekly Call
+To be scheduled, please use the below link to select a time.
+
+‌
+Tuesday, January 14 
+11:30am 
+Wednesday, January 15 
+10:00am 
+1:00pm 
+Thursday, January 16 
+10:30am 
+12:30pm 
+See all available times
+‌
+Deliverability Overview
+Scheduled for Friday, 1/17/25, at 11:30am PST
+
+Blueshift Access
+Please reach out should you have any issues accessing your Blueshift accounts.
+
+Documentation
+Developer Portal
+API Endpoints
+Kickoff Deck
+Importing User Data
+Blueshift Support Portal
+Data Overview
+
+Training 
+Register here: https://academy.blueshift.com/.
+  
+Data Samples
+If possible, please provide a small sample (10-25 rows) of user-level profile data for Blueshift to review before the Data Integration call and work on importing a small subset of your user base to Sandbox. 
+
+Onboarding Goals
+Identify and set onboarding goals by Week 2.  
+If you have any questions, please do not hesitate to reach out. 
+
+Thank you,
+---------

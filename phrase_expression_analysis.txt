@@ -1,0 +1,19 @@
+Analyze Stephen's common phrases and expressions:
+
+Most Frequent Phrases:
+- wanted to: 3216
+- thank you for: 3120
+- please let me know: 2920
+- just wanted to: 887
+- as discussed: 728
+- looking forward to: 674
+- following up on: 569
+- quick question: 525
+- reaching out to: 451
+- at your earliest convenience: 303
+
+Describe:
+1. What do these phrases reveal about his communication style?
+2. How does he make requests?
+3. How does he express gratitude?
+4. What transitional phrases does he favor?

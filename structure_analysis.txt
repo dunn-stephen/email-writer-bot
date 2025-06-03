@@ -1,0 +1,78 @@
+Analyze Stephen's email structure based on these samples:
+
+
+Email 1:
+Subject: Blueshift - Onboarding workspace
+Body Preview:
+Hey Ruwan,
+
+To make onboarding as smooth as possible, we use *Rocketlane* to manage
+your project. You’ll soon receive an email from *[EMAIL]
+<[EMAIL]>*—this will give you access to your dedicated
+onboarding workspace.
+
+Please let me know who else I should add to Rocketlane from your team.
+
+Feel free to reach out with any questions.
+
+Thank you,
+
+Stephen Dunn
+*Sr. Product Consultant* | blueshift.com
+<https://blueshift.com/?utm_medium=email&utm_source=emailsignature>
+<https://bluesh...
+
+
+Email 2:
+Subject: Blueshift - Onboarding workspace
+Body Preview:
+Hey Lemuel
+
+To make onboarding as smooth as possible, for *jcw.com <http://jcw.com>*
+and *carpartswholesale.com <http://carpartswholesale.com>*,  we use
+*Rocketlane* to manage your project.
+
+You’ll soon receive an email from *[EMAIL]
+<[EMAIL]>*—this will give you access to your dedicated
+onboarding workspace.
+
+Feel free to reach out with any questions.
+Thank you,
+
+Stephen Dunn
+*Sr. Product Consultant* | blueshift.com
+<https://blueshift.com/?utm_medium=email&utm_source=emailsignatu...
+
+
+Email 3:
+Subject: Re: Blueshift | TDot Performance - Open Items
+Body Preview:
+Hey Carissa,
+
+Thanks for the update.
+
+*OptinMonster*
+
+   - Do you have an email capture form that you publish to the wehbook url
+   I provided to confirm the incoming data structures?
+
+*User Data*
+
+   - I reviewed the user data, everything looks good, when you load the
+   data into production, for fields like "sms_attentive_signup" where it's a
+   true/false value the data type should be set to Boolean.
+
+*List Validation*
+
+   - Yes, let Nathan know and he'll coordinate integrati...
+
+
+Writing Metrics:
+- Average email length: 1668.0 words
+- Average sentence length: 8.0 words
+
+Describe:
+1. How does he structure multi-topic emails?
+2. How does he use formatting (bullets, bold, etc.)?
+3. What's his paragraph structure like?
+4. How does he handle action items?
