@@ -1,0 +1,260 @@
+{
+  "email_templates": {
+    "onboarding": [
+      {
+        "id": "onboarding_001",
+        "subject": "Blueshift - Onboarding workspace",
+        "context": "Initial onboarding setup for new customer",
+        "key_elements": [
+          "Rocketlane workspace setup",
+          "Request for additional team members",
+          "Contact information"
+        ],
+        "example": "Hey [Customer Name],\n\nTo make onboarding as smooth as possible, we use *Rocketlane* to manage your project. You'll soon receive an email from *[EMAIL] <[EMAIL]>*—this will give you access to your dedicated onboarding workspace.\n\nPlease let me know who else I should add to Rocketlane from your team.\n\nFeel free to reach out with any questions.\n\nThank you,\n\nStephen Dunn\n*Sr. Product Consultant* | blueshift.com"
+      },
+      {
+        "id": "onboarding_002",
+        "subject": "Blueshift Kickoff - Follow up and Next Steps",
+        "context": "Post-kickoff meeting follow-up with action items",
+        "key_elements": [
+          "Call recording",
+          "Email domain selection",
+          "Scheduled meetings",
+          "Documentation links",
+          "Training information",
+          "Data sample request"
+        ],
+        "example": "Hi Team,\n\nThanks for joining us for today's Kickoff. On behalf of our team, we welcome you to Blueshift once more!\n\nHere are a few takeaways from today's call.\n\nCall Recording\nHere is the recording from today's call.\n\nEmail Domain Selection\nPlease provide the list of subdomains. Once provided the DNS and configuration guidance will be shared.\n\nData Overview\nScheduled for Thursday, 1/16, at 1:30pm PST. The meeting will cover integration options and points around user data, catalog, events, and historical data (as needed).\n\nSchedule Weekly Call\nTo be scheduled, please use the below link to select a time.\n\n[Calendar scheduling section]\n\nDeliverability Overview\nScheduled for Friday, 1/17/25, at 11:30am PST\n\nBlueshift Access\nPlease reach out should you have any issues accessing your Blueshift accounts.\n\nDocumentation\n- Developer Portal\n- API Endpoints\n- Kickoff Deck\n- Importing User Data\n- Blueshift Support Portal\n- Data Overview\n\nTraining\nRegister here: https://academy.blueshift.com/.\n\nData Samples\nIf possible, please provide a small sample (10-25 rows) of user-level profile data for Blueshift to review before the Data Integration call and work on importing a small subset of your user base to Sandbox.\n\nOnboarding Goals\nIdentify and set onboarding goals by Week 2.\n\nIf you have any questions, please do not hesitate to reach out.\n\nThank you,"
+      }
+    ],
+    "technical_support": [
+      {
+        "id": "tech_001",
+        "subject": "SMS Opt-in Implementation",
+        "context": "Technical implementation guidance for SMS opt-in",
+        "key_elements": [
+          "Event name specification",
+          "Data format requirements",
+          "Example payload",
+          "Implementation instructions"
+        ],
+        "example": "Hey [Customer Name],\n\nThe SMS opt-in implementation requires only two data elements:\n- Event name: \"sms_signup\"\n- User data: \"phone_number\" (format: \"+16508475012\")\n\nExample payload:\n{\n   \"event\": \"sms_signup\",\n   \"phone_number\": \"+16508475012\"\n}\n\nWhen this event is sent to Blueshift, the user will immediately receive an opt-in message.\n\nThank you,"
+      },
+      {
+        "id": "tech_002",
+        "subject": "Link Redirect Investigation Results",
+        "context": "Technical investigation of redirect errors",
+        "key_elements": [
+          "Error analysis",
+          "Root cause identification",
+          "Recommended solution",
+          "Next steps for customer IT team"
+        ],
+        "example": "Hey [Customer Name],\n\nOur engineering team investigated the link redirect issues. The 403 errors occur after the request hits the GTI domain. When we test the links directly they work, but show errors in redirect tracing tools. This indicates your load balancer or proxy server is likely filtering certain requests based on IP addresses or user agents, which explains why some users experience errors while others don't.\n\nPlease have your IT team check your load balancer configurations, security rules, and filtering settings that might be affecting email clients differently.\n\nThank you,"
+      },
+      {
+        "id": "tech_003",
+        "subject": "Data Layer Custom JavaScript Function",
+        "context": "Custom JavaScript implementation for conditional logic",
+        "key_elements": [
+          "Example website reference",
+          "Data layer structure explanation",
+          "Custom function code example",
+          "Validation request"
+        ],
+        "example": "Hey [Customer Name],\n\nThank you for the quick reply.\n\nI am working with carid.com, here's an example webpage: https://www.carid.com/2023-toyota-rav4-taillights/replacement-factory-replacement-tail-lights-fiber-optic-led-6148879460.html\n\nOn that page in the dataLayer on the first object there is a key/value pair; productCategory: \"tail lights\".\n\nSo if let's say I want to show the box if \"tail lights\" is true in the productCategory in the dataLayer would I do a custom javascript function condition like the following?\n\nfunction digohCustomBoxCondition() {\n    if (Array.isArray(window.dataLayer) && window.dataLayer.length > 0) {\n        return window.dataLayer[0].productCategory === \"tail lights\";\n    }\n    return false;\n}\n\nThank you,"
+      },
+      {
+        "id": "tech_004",
+        "subject": "Segment Builder Bug Resolution",
+        "context": "Bug identification and resolution for segment issues",
+        "key_elements": [
+          "Bug identification",
+          "Root cause explanation",
+          "Temporary workaround",
+          "Permanent fix status"
+        ],
+        "example": "Hey [Customer Name],\n\nWe've identified a bug that allowed an empty messaging filter condition to be saved. This blank condition was present in the segment when the campaign launched, which caused the user count to drop to zero.\n\nChecking the email box in the segment builder effectively removed the blank condition. We're working on a bug fix that allowed this blank condition to be saved.\n\nIn the meantime, I recommend refreshing the segment counts once to ensure any lingering blank conditions are removed.\n\nLet me know if you have any questions!\n\nThank you,"
+      },
+      {
+        "id": "tech_005",
+        "subject": "Email Delivery Suppression List Issue",
+        "context": "Explanation of email suppression and recommendations",
+        "key_elements": [
+          "Issue identification",
+          "Technical explanation",
+          "Available options",
+          "Best practice recommendation"
+        ],
+        "example": "Hi [Customer Name],\n\nWhen Blueshift attempted to send emails to those addresses via Mailgun, they were flagged on Mailgun's suppression list due to previous unsubscribes. As a result, Mailgun did not deliver the emails, adhering to its safety mechanism.\n\nWhile it's possible to override this by enabling the \"Skip Suppression List\" option in the email adapter, we do not recommend doing so as there is a high risk of negatively affecting your domain/IP reputation.\n\nThank you,"
+      }
+    ],
+    "data_configuration": [
+      {
+        "id": "data_001",
+        "subject": "Data Science Deployment Notification",
+        "context": "Notification of new derived event deployment",
+        "key_elements": [
+          "Event name specification",
+          "Example profile link",
+          "Review request"
+        ],
+        "example": "Hey [Customer Names],\n\nOur Data Science team has deployed the margin derived event. Here's an example profile.\n\nEvent: event_metrics.margin_diff.add_to_cart\n\nPlease review and let me know if there are any questions.\n\nThank you,"
+      },
+      {
+        "id": "data_002",
+        "subject": "User Data Best Practices",
+        "context": "Best practices for user data collection setup",
+        "key_elements": [
+          "Separate page recommendation",
+          "Integration types",
+          "Mobile optimization",
+          "Clear user action delineation"
+        ],
+        "example": "Hey [Customer Name],\n\nWhen capturing user data, I recommend following these best practices:\n\n1. Create separate pages for email and phone number collection:\nFirst page: Email capture using the \"Blueshift Email Signup\" integration\nSecond page: Phone number capture using the \"Blueshift SMS Signup\" integration\nThis approach clearly delineates user actions and sends Blueshift separate events for email and SMS signups. Plus, event names are fully customizable.\n\n2. Add mobile breakpoints to all pages to ensure proper display across devices.\n\nLet me know if you have any questions\n\nThank you,"
+      },
+      {
+        "id": "data_003",
+        "subject": "Import Job Configuration",
+        "context": "Configuration guidance for data import jobs",
+        "key_elements": [
+          "Frequency update instructions",
+          "Two-job configuration strategy",
+          "One-time vs recurring imports",
+          "Specific settings guidance"
+        ],
+        "example": "Hey [Customer Name],\n\nTo change the frequency update \"Task execute every\" to hourly, documentation here.\n\nI suggest configuring two delivered import jobs.\n\nThe first, as a one-time import, this job should contain data from 2/11 and before that when the job was paused and only select \"Save product for recommendations\" in the job settings, see screenshot below.\n\nThe second, should contain net new delivered event data that Blueshift has yet to see. This can be configured as an hourly import."
+      },
+      {
+        "id": "data_004",
+        "subject": "Data Import Adapter Configuration",
+        "context": "Update on data import adapter setup",
+        "key_elements": [
+          "Staging environment setup",
+          "Dedicated warehouse configuration",
+          "Next steps for event schema"
+        ],
+        "example": "Hey [Customer Name],\n\nOur DE team has configured a use import adapter in staging.ent.com with a dedicated warehouse and task for our internal checks.\n\nHere's a draft user import job for reference.\n\nThey have asked that once the schema for the events table/view is configured we can then create an event import adapter.\n\nThank you,"
+      }
+    ],
+    "follow_up": [
+      {
+        "id": "followup_001",
+        "subject": "Re: Blueshift | TDot Performance - Open Items",
+        "context": "Follow up on multiple open implementation items",
+        "key_elements": [
+          "Multiple topic areas",
+          "ETA requests",
+          "Specific questions per topic"
+        ],
+        "example": "Hey [Customer Name],\n\nFollow up on a few open items, do you have an ETA/update on the following?\n\n*OptinMonster*\n- How is OptinMonster currently being utilized? Is it being used for email/info capture forms?\n\n*User Data*\n- Do you have an ETA on getting user data loaded into Blueshift?\n\n*List Validation*\n- Any questions following Nathan providing the validated list?\n\n*Assets - Campaigns, Templates, & Segments*\n- Do you have an ETA on building out these items?\n\nThank you,"
+      }
+    ],
+    "information_response": [
+      {
+        "id": "info_001",
+        "subject": "Report Filter Behavior",
+        "context": "Quick clarification question about filter behavior",
+        "key_elements": [
+          "Filter inheritance explanation",
+          "Request for specific details",
+          "Link request"
+        ],
+        "example": "Hey [Customer Name],\n\nFilters generally inherit selection from the most recent session for your user.\n\nWhat were the report parameters? A particular campaign? Do you have a link?\n\nThank you,"
+      },
+      {
+        "id": "info_002",
+        "subject": "Security and Encryption Information",
+        "context": "Security protocol clarification",
+        "key_elements": [
+          "Encryption methods",
+          "Data protection measures"
+        ],
+        "example": "Hey [Customer Name],\n\nBlueshift and Meta itself are encrypted using SSL/TLS. In addition, the fields syndicated are hashed using SHA256.\n\nThank you,"
+      },
+      {
+        "id": "info_003",
+        "subject": "API Documentation Resources",
+        "context": "Sharing relevant API documentation",
+        "key_elements": [
+          "Multiple resource links",
+          "Specific documentation references"
+        ],
+        "example": "Hey [Customer Name],\n\nFound a couple links that might be useful to share with the team.\n\nAccessing AS via API: https://learn.microsoft.com/en-us/graph/use-the-api\n\nExport AD Files: https://learn.microsoft.com/en-us/previous-versions/windows/desktop/dsde/exporting-active-directory-objects\n\nThank you,"
+      },
+      {
+        "id": "info_004",
+        "subject": "Metric Calculation Explanation",
+        "context": "Detailed explanation of metric discrepancies",
+        "key_elements": [
+          "Technical explanation of calculations",
+          "Date range impact",
+          "Visual aid reference",
+          "Clarification offer"
+        ],
+        "example": "Hey [Customer Name],\n\nThe discrepancy you're seeing in the Unique Open Rate is related to how the metric is calculated daily as a ratio of opens to sends for the selected date range.\n\nOn 10/30, there was a significant spike in sends, ~45k. When you select the 10/30 to 11/30 range, the open rate is calculated using all sends and opens within that period. However, when the start date shifts to 10/31, there are fewer sends but a relatively high number of opens and clicks during the remaining period. This imbalance results in an inflated open rate for that timeframe.\n\nI've included a screenshot below to help illustrate this. Please let me know if you need further clarification.\n\nScreenshot 2024-12-04 at 3.57.25 PM.png\n\nThank you,"
+      },
+      {
+        "id": "info_005",
+        "subject": "Product Score Investigation",
+        "context": "Gathering requirements for data science investigation",
+        "key_elements": [
+          "Next steps proposal",
+          "Information request",
+          "Context gathering",
+          "Bot traffic consideration"
+        ],
+        "example": "Hey [Customer Name],\n\nI think the next best step would be for me to reach out to our Data Science team to gather more details about the \"Top View Items in the Last 28 Days\" score.\n\nBefore I do, could you share more about why this product is a concern? Additionally, do you have a list of top-selling or top-viewed products that our Data Science team could use for comparison?\n\nAre you aware of ongoing issues with bots interacting on the Five Below site? If the Five Below site sends a 'view' event to Blueshift, which populates the top viewed item's score, Blueshift doesn't have a way to distinguish a bot vs human-generated event.\n\nThank you,"
+      }
+    ],
+    "infrastructure": [
+      {
+        "id": "infra_001",
+        "subject": "DNS Configuration Request",
+        "context": "DNS record update request",
+        "key_elements": [
+          "Pending DNS entries",
+          "Updated CNAME records",
+          "SSL provisioning update",
+          "Confirmation request"
+        ],
+        "example": "Hi Team,\n\nHave you been able to add the pending DNS entries highlighted in yellow here?\n\nPlease note that we have updated two CNAME records as we recently updated our SSL provisioning process.\n\nPlease let me know once these records have been added.\n\nThank you,"
+      },
+      {
+        "id": "infra_002",
+        "subject": "Dedicated IP Provisioning",
+        "context": "IP provisioning confirmation",
+        "key_elements": [
+          "Dedicated IP address",
+          "Autowarming status",
+          "Shared IP reference",
+          "Domain readiness"
+        ],
+        "example": "Hey [Customer Name],\n\nA Dedicated IP has been provisioned with Autowarming enabled for i.carid.com. The domain is ready for use.\n143.55.230.49 - Dedicated\n198.61.254.23  - Shared\n\nThank you,"
+      }
+    ]
+  },
+  "metadata": {
+    "last_updated": "2025-03-07",
+    "total_templates": 23,
+    "categories": {
+      "onboarding": 2,
+      "technical_support": 5,
+      "data_configuration": 4,
+      "follow_up": 1,
+      "information_response": 5,
+      "infrastructure": 2
+    },
+    "common_elements": {
+      "greeting": "Hey/Hi [Customer Name]",
+      "closing": "Thank you,",
+      "signature": "Stephen Dunn\n*Sr. Product Consultant* | blueshift.com"
+    },
+    "writing_style": {
+      "tone": "Professional yet friendly",
+      "structure": "Clear sections with bold headers for multiple topics",
+      "formatting": "Uses markdown-style formatting (*bold*), numbered lists, bullet points",
+      "length": "Concise but comprehensive, typically 50-200 words"
+    }
+  }
+}
